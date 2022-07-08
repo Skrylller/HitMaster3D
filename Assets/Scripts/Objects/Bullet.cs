@@ -19,6 +19,11 @@ public class Bullet : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Move();
+    }
+
+    private void Move()
+    {
         transform.Translate(new Vector3(0, 0, _speed * Time.fixedDeltaTime), Space.Self);
     }
 

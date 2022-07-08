@@ -28,6 +28,10 @@ public class ObjectPull : MonoBehaviour
             }
         }
 
+        /// <summary>
+        /// если на найдет обьект в пуле, то создаст его
+        /// </summary>
+        /// <returns></returns>
         public GameObject FindFreeObject()
         {
             for (int i = 0; i < _size; i++)
@@ -43,6 +47,12 @@ public class ObjectPull : MonoBehaviour
             return _objects[_size - 1];
         }
 
+        /// <summary>
+        /// находит свободный обьект в пуле и активирует его
+        /// </summary>
+        /// <param name="position"></param>
+        /// <param name="rotation"></param>
+        /// <returns></returns>
         public GameObject ActivateObject(Vector3 position, Vector3 rotation)
         {
             GameObject obj = FindFreeObject();

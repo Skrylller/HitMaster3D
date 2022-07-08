@@ -33,6 +33,9 @@ public class Enemy : MonoBehaviour
         _healthBar.value = _health;
     }
 
+    /// <summary>
+    /// включает регдол, отключает аниматор
+    /// </summary>
     private void Death()
     {
         _animator.enabled = false;

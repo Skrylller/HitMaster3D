@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
         walk
     }
 
-    [SerializeField] private float _stopDistance;
+    [SerializeField] private float _stopDistance; //дистанция на которую игрок должен подойти к точке
     [SerializeField] private Animator _animator;
 
     private Shooter _shooter;
@@ -41,6 +41,10 @@ public class Player : MonoBehaviour
     {
         CheckState();
     }
+
+    /// <summary>
+    /// переводит игрока в состояние walk и задает следующую по списку точку, если точка была последняя перезапускает сцену
+    /// </summary>
     public void StartNextPoint()
     {
         _state = State.walk;
@@ -76,6 +80,7 @@ public class Player : MonoBehaviour
 
     private void Walk()
     {
+        //проверка расстояния до точки назначения
         if(Vector3.Distance(_levelPoint.transform.position, transform.position) <= _stopDistance)
         {
             StopPlayer();
@@ -90,6 +95,9 @@ public class Player : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// переводит игрока в состояние idle, включает возможность стрелять
+    /// </summary>
     private void StopPlayer()
     {
         _state = State.idle;

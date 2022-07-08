@@ -7,6 +7,10 @@ public class LevelPoint : MonoBehaviour
     [SerializeField] private bool isStopPlayerAnyway;
     [SerializeField] private List<Enemy> _enemies = new List<Enemy>();
 
+    /// <summary>
+    /// проверка - мертвы ли все враги привязанные к точке
+    /// </summary>
+    /// <returns></returns>
     public bool CheckAllEnemies()
     {
         if (isStopPlayerAnyway)

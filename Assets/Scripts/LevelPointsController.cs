@@ -13,6 +13,11 @@ public class LevelPointsController : MonoBehaviour
         main = this;
     }
 
+    /// <summary>
+    /// Если передать null, то вернет первую точку в массиве. Если передать последнюю точку массива, то вернет null.
+    /// </summary>
+    /// <param name="point"></param>
+    /// <returns></returns>
     public LevelPoint GetNextPoint(LevelPoint point)
     {
         if(point == null)
